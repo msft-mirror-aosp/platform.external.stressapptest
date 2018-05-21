@@ -18,11 +18,9 @@ LOCAL_SRC_FILES := \
 	src/sat_factory.cc \
 	src/worker.cc
 
-# just build a 32b version, even on 64b hosts
-LOCAL_MULTILIB := 32
 LOCAL_MODULE := stressapptest
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_UNSUPPORTED_TARGET_ARCH := mips x86
+LOCAL_MODULE_UNSUPPORTED_TARGET_ARCH := mips x86 x86_64
 
 LOCAL_CFLAGS := -DHAVE_CONFIG_H -DANDROID -DNDEBUG -UDEBUG -DCHECKOPTS
 LOCAL_CFLAGS += -Wall -Werror -Wno-unused-parameter -Wno-\#warnings
