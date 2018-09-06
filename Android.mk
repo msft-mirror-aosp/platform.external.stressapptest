@@ -24,6 +24,7 @@ LOCAL_MODULE_UNSUPPORTED_TARGET_ARCH := mips x86 x86_64
 
 LOCAL_CFLAGS := -DHAVE_CONFIG_H -DANDROID -DNDEBUG -UDEBUG -DCHECKOPTS
 LOCAL_CFLAGS += -Wall -Werror -Wno-unused-parameter -Wno-\#warnings
+LOCAL_CFLAGS += -Wno-implicit-fallthrough
 
 LOCAL_CPP_EXTENSION := .cc
 
