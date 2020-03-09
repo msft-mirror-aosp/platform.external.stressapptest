@@ -18,9 +18,6 @@ cc_binary {
     ],
 
     arch: {
-        mips: {
-            enabled: false,
-        },
         x86: {
             enabled: false,
         },
