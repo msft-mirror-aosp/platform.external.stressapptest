@@ -18,6 +18,8 @@ cc_binary {
     ],
 
     arch: {
+        arm: { cflags: ["-DSTRESSAPPTEST_CPU_ARMV7A"] },
+        arm64: { cflags: ["-DSTRESSAPPTEST_CPU_AARCH64"] },
         x86: {
             enabled: false,
         },
