@@ -1238,11 +1238,9 @@ int WorkerThread::CrcCopyPage(struct page_entry *dstpe,
                       expectedcrc->ToHexString().c_str());
             struct ErrorRecord er;
             er.actual = sourcemem[0];
-            er.expected = 0xbad00000ull << 32;
+            er.expected = 0x0;
             er.vaddr = sourcemem;
             ProcessError(&er, 0, "Hardware Error");
-            errors += 1;
-            errorcount_ ++;
           }
         }
       }
@@ -1387,8 +1385,6 @@ int WorkerThread::CrcWarmCopyPage(struct page_entry *dstpe,
             er.expected = 0xbad;
             er.vaddr = sourcemem;
             ProcessError(&er, 0, "Hardware Error");
-            errors ++;
-            errorcount_ ++;
           }
         }
       }

@@ -403,17 +403,15 @@ Pattern *PatternList::GetPattern(int i) {
 
 // Return a randomly selected pattern.
 Pattern *PatternList::GetRandomPattern() {
-  int target = random();
+  unsigned int target = random();
+  target = target % weightcount_;
+
   unsigned int i = 0;
-  target = (target % weightcount_) + 1;
-
-  do {
-    target -= patterns_[i].weight();
-    if (target <= 0)
-      break;
+  unsigned int sum = 0;
+  while (target > sum) {
+    sum += patterns_[i].weight();
     i++;
-  } while (i < size_);
-
+  }
   if (i < size_) {
     return &patterns_[i];
   }
