@@ -65,7 +65,7 @@ cc_binary {
             enabled: false,
         },
         x86_64: {
-            enabled: false,
+            cflags: ["-DSTRESSAPPTEST_CPU_X86_64"],
         },
     },
 
